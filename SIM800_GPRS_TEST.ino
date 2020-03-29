@@ -37,9 +37,12 @@ void setup()
   updateSerial();
   mySerial.println("AT+HTTPPARA=\"CID\",1"); //Set connection type 
   updateSerial();
+  
+  //mySerial.println("AT+HTTPSSL=1"); //Uncomment this if your URL is https 
+  //updateSerial();
+  
   mySerial.println("AT+HTTPPARA=\"URL\",\"http://sandro.awardspace.info/php/hola.php?hello_world\""); //Set URL
   updateSerial();
-
   mySerial.println("AT+HTTPACTION=1"); //Download data
   updateSerial();
   delay(5000);
